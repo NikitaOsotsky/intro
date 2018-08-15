@@ -4,14 +4,21 @@
   <meta charset="UTF-8">
   <title>Task_1</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js"></script>
 </head>
 <body>
   <div class="wrapper">
-    <input type="file" name="uploader" id="uploader">
     <div class="preview" id="uploaderPreview">
-      <p id="uploaderClicker">Click to load file!</p>
+      <label>Click to load file!<input type="file" name="uploader" id="uploader"></label>
+      <img src="" alt="image" id="uploaderIMG">
     </div>
+    <div class="buttons">
+      <p class="button" id="check">Get file-info</p>
+      <p class="button" id="clear">Clear</p>
+    </div>
+    <pre class="output"></pre>
   </div>
+
+  <script src="js/TFileInfo.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
