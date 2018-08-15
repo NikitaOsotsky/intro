@@ -1,0 +1,23 @@
+.wrapper {
+  margin: 0 auto;
+}
+.preview {
+  width: 800px;
+  height: 600px;
+  border: 1px dashed blue;
+  display: flex;
+  align-items: center;
+}
+#uploader {
+  display: none;
+}
+.preview > p {
+  text-align: center;
+  margin: 0 auto;
+  font-family: "Arial Black", Arial, serif;
+  color: rgba(0, 0, 0, 0.5);
+  user-select: none;
+}
+.preview > p:hover {
+  cursor: pointer;
+}
