@@ -1,0 +1,6 @@
+fieldset > div > label, form > fieldset {
+  user-select: none;
+}
+form > fieldset > label {
+  display: block;
+}
