@@ -4,7 +4,7 @@
   const fileInfo = new TFileInfo();
   const uploader = document.querySelector('#uploader');
   const output = document.querySelector('.output');
-  const img = document.querySelector('#uploaderIMG');
+  const img = document.querySelector('.imageBox');
   /*listener to Get file info*/
   document.querySelector('#check').addEventListener('click', () => {
     getInfo();
@@ -36,7 +36,7 @@
     }
   }
 
-  /**/
+  /*adding src to imageBox*/
   function addSRC() {
     const reader = new FileReader();
     reader.onload = function(e) {
