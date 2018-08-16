@@ -28,4 +28,20 @@ input[type='radio']::before {
 
 input[type='radio']:checked::before {
   color: crimson;
+  text-shadow: 0 -1px rgba(133, 26, 97, .1);
+  animation: pulsate 0.7s linear forwards;
+}
+@keyframes pulsate{
+  100%{
+    color: darkred;
+    text-shadow: 0 0 5px, rgba(133, 26, 97, .7), rgba(118, 6, 30, 0.86);
+    transform: rotate(30deg);
+  }
+}
+fieldset {
+  border: solid 1px darkred;
+  box-shadow: 2px 2px 0 rgba(255, 202, 225, 0.76);
+  font-family: Arial, sans-serif;
+  font-size: 7pt;
+  margin-bottom: 1em;
 }
