@@ -3,4 +3,29 @@ fieldset > div > label, form > fieldset {
 }
 form > fieldset > label {
   display: block;
+  margin-left: 1em;
+  font-family: Verdana, sans-serif;
+  font-size: 9pt;
+  font-style: italic;
+}
+
+input[type='radio'] {
+  height: 0;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+input[type='radio']::before {
+  position: absolute;
+  top: -15px;
+  left: 0;
+  content: "\274D";
+  border-radius: 50%;
+  color: lightgray;
+  font-style: oblique;
+}
+
+input[type='radio']:checked::before {
+  color: crimson;
 }

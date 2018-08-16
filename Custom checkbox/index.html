@@ -11,9 +11,18 @@
   <form>
     <fieldset>
       <legend>Select one of them</legend>
-        <label><input type="radio" id="first" name="oneOfUs" checked />First</label>
-        <label><input type="radio" id="second" name="oneOfUs" />Second</label>
-        <label><input type="radio" id="thirst" name="oneOfUs" />Thirst</label>
+        <label class="labelForRadio"><input value="v1" type="radio" id="first" name="oneOfUs" checked />First</label>
+        <label class="labelForRadio"><input value="v2" type="radio" id="second" name="oneOfUs" />Second</label>
+        <label class="labelForRadio"><input value="v3" type="radio" id="thirst" name="oneOfUs" />Thirst</label>
+    </fieldset>
+  </form>
+
+  <form>
+    <fieldset>
+      <legend>Select some of them</legend>
+        <label class="labelForCheck"><input type="checkbox" name="myCheck" value="v1"/>I like bikes</label>
+        <label class="labelForCheck"><input type="checkbox" name="myCheck" value="v2"/>I like cars</label>
+        <input type="submit" value="Submit">
     </fieldset>
   </form>
 
