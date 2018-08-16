@@ -43,3 +43,6 @@
 .preview > label:hover {
   cursor: pointer;
 }
+.imageBox[src^="data:image"] {
+  display: block;
+}

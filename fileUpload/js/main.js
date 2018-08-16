@@ -6,16 +6,16 @@
   const fileInfo = new TFileInfo();
   const uploader = document.querySelector('#uploader');
   const output = document.querySelector('.output');
-  const img = document.querySelector('.imageBox');//TODO: name
+  const preloadImage = document.querySelector('.imageBox');//TODO: name
 
-
-
+  /**
+   * function set file info to model
+   */
   function getFile() {
+    const file = uploader.files[0];
     if (!file) {
       return;
     }
-
-    const file = uploader.files[0];
 
     fileInfo.name = file.name;
     fileInfo.size = file.size;
@@ -26,10 +26,7 @@
   function addSRC() {
     const reader = new FileReader();
     reader.onload = function(e) {
-      img.src = e.target.result;
-
-      // TODO: move to CSS
-      img.style.display = 'block';
+      preloadImage.src = e.target.result;
     };
     reader.readAsDataURL(uploader.files[0]);
   }
@@ -61,9 +58,7 @@
     document.querySelector('#clear').addEventListener('click', () => {
       fileInfo.clear();
       output.innerHTML = '';
-      img.src = '';
-      // TODO: move to CSS
-      // img.style.display = 'none';
+      preloadImage.src = '';
     });
 
     uploader.addEventListener('input', onUploaderInput);
