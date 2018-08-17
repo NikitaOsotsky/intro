@@ -1,9 +1,10 @@
 export class List {
   constructor() {
-    this.listContent = [];
-    this.container = this.items;
+    this.listContent = List.generateList();
+    this.container = List.createContent(this.listContent);
   }
-  generateList () {
+
+  static generateList () {
     /**
      * first - min symbol code
      * second - max symbol code
@@ -16,7 +17,7 @@ export class List {
      * @type {number}
      */
     const wordsCount = Math.round(Math.random() * 100 + 100);
-
+    const words = [];
 
     for (let i = 1; i < wordsCount; i++) {
       const firstSymbol = String.fromCharCode(Math.round((symbols[0] + Math.random() * (symbols[1] - symbols[0]))));
@@ -28,19 +29,17 @@ export class List {
         word += String.fromCharCode(Math.round((symbols[0] + Math.random() * (symbols[1] - symbols[0])))).toLowerCase();
       }
 
-      this.listContent.push(word);
+      words.push(word);
     }
+
+    return words;
   }
 
-  createContent () {
+  static createContent (listContent) {
     const ol = document.createElement('ol');
-    const textElem = document.createTextNode('List of issues:');
-    ol.appendChild(textElem);
-
-    for (let i = 0; i < this.listContent.length; i++) {
-      ol.appendChild(elementLI(this.listContent[i]));
+    for (let i = 0; i < listContent.length; i++) {
+      ol.appendChild(elementLI(listContent[i]));
     }
-
     function elementLI(elem) {
       const li = document.createElement('li');
       const textElem = document.createTextNode(elem);
@@ -48,16 +47,11 @@ export class List {
 
       return li;
     }
-    this.container = ol;
+
+    return ol;
   }
 
-  get items() {
-    return this.listContent;
-  }
   get content() {
-    this.generateList();
-    this.createContent();
-
     return this.container;
   }
 }
