@@ -1,0 +1,23 @@
+{
+  "name": "intro",
+  "version": "1.0.0",
+  "description": "Main branch for completed tasks!",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  },
+  "scripts": {
+    "start": "http-server ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikitaOsotsky/intro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NikitaOsotsky/intro/issues"
+  },
+  "homepage": "https://github.com/NikitaOsotsky/intro#readme"
+}
