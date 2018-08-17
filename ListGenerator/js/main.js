@@ -1,4 +1,6 @@
 "use strict";
 import {List} from "./modules/list.js";
-const list1 = new List('list1', 100);
-list1.generateList();
+
+const wordsList = new List('grfhg', 100);
+const divElem = document.querySelector('.listViewer');
+divElem.appendChild(wordsList.content);

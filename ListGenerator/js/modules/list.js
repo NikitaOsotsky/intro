@@ -1,8 +1,7 @@
 export class List {
-  constructor(name, count) {
-    this.count = count;
-    this.listName = name;
+  constructor() {
     this.listContent = [];
+    this.container = this.items;
   }
   generateList () {
     /**
@@ -31,7 +30,34 @@ export class List {
 
       this.listContent.push(word);
     }
+  }
 
-    console.log(this.listContent);
+  createContent () {
+    const ol = document.createElement('ol');
+    const textElem = document.createTextNode('List of issues:');
+    ol.appendChild(textElem);
+
+    for (let i = 0; i < this.listContent.length; i++) {
+      ol.appendChild(elementLI(this.listContent[i]));
+    }
+
+    function elementLI(elem) {
+      const li = document.createElement('li');
+      const textElem = document.createTextNode(elem);
+      li.appendChild(textElem);
+
+      return li;
+    }
+    this.container = ol;
+  }
+
+  get items() {
+    return this.listContent;
+  }
+  get content() {
+    this.generateList();
+    this.createContent();
+
+    return this.container;
   }
 }
