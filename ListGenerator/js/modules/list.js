@@ -37,6 +37,10 @@ export class List {
 
   static createContent (listContent) {
     const ol = document.createElement('ol');
+    ol.addEventListener('click', (evt) => {
+      console.log(evt.target);
+      evt.target.remove();
+    });
     for (let i = 0; i < listContent.length; i++) {
       ol.appendChild(elementLI(listContent[i]));
     }
